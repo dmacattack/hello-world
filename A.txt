@@ -1,0 +1,41 @@
+This file was a test on how to ammed a change in git
+$ git touch A.txt B.txt
+$ git add .
+$ git commit -m "A, but i want to remove B"
+$ git log -2
+commit 6b0467b3c78d61e782bdd3c09432e51a6d889455
+Author: dmacdonald <dan.macdonald@harman.com>
+Date:   Wed Dec 21 14:32:46 2016 -0500
+
+    A, but i want to remove B
+
+commit 5bb7b8d3fc3e9d4e1609f55331a5f3e64abb851e
+Author: dmacdonald <dan.macdonald@harman.com>
+Date:   Thu Oct 6 08:21:19 2016 -0400
+
+    Update README with cheat sheet commands
+
+$ ls
+A.txt  B.txt  README.md  test.txt
+
+$ git rm B.txt
+rm 'B.txt'
+
+$ git commit --amend
+[master de6b838] A, but i want to remove B. nano popped up where i edited the commit
+ 0 files changed
+ create mode 100644 A.txt
+
+$ git log -2
+commit de6b8387729a5d266fdd7ec3ad7381c4013be28e
+Author: dmacdonald <dan.macdonald@harman.com>
+Date:   Wed Dec 21 14:32:46 2016 -0500
+
+    A, but i want to remove B.
+    nano popped up where i edited the commit
+
+commit 5bb7b8d3fc3e9d4e1609f55331a5f3e64abb851e
+Author: dmacdonald <dan.macdonald@harman.com>
+Date:   Thu Oct 6 08:21:19 2016 -0400
+
+    Update README with cheat sheet commands
